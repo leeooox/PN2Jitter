@@ -7,4 +7,4 @@ It is a very simple program, input the phase noise curve points and press calcul
 
 
 
-![gui](doc\gui.png)
+![gui](doc/gui.png)
