@@ -1,15 +1,15 @@
 import math,sequtils
 type
-  Jitter = object
-    segment : seq[float]
-    sum     : float
-    f       : seq[float]
+  Jitter* = object
+    segment* : seq[float]
+    sum*     : float
+    f*       : seq[float]
 
 type
-  PhaseNoise = object
-    f       : seq[float]
-    lf      : seq[float]
-    fc      : float
+  PhaseNoise* = object
+    f*       : seq[float]
+    lf*      : seq[float]
+    fc*      : float
 
 proc diff[T](seqin:openArray[T]) : seq[T] =
   for i in 0..(seqin.len-2):
@@ -30,7 +30,7 @@ proc `log10`[T](a:openArray[T]) : seq[T] =
   result = map(a, proc(x:T):T=log10(x))
 
 
-proc PN2Jitter(pn:PhaseNoise): Jitter = 
+proc PN2Jitter*(pn:PhaseNoise): Jitter = 
   var lf_diff : seq[float]
   let 
     lf = pn.lf
